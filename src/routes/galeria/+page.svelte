@@ -52,7 +52,7 @@
 		<ScrollReveal>
 			<a
 				href="/"
-				class="inline-flex items-center gap-2 text-sm uppercase tracking-[0.15em] text-brand-gray hover:text-white transition-colors group mb-12"
+				class="inline-flex items-center gap-2 text-sm tracking-widest text-warm-taupe hover:text-warm-cream transition-colors group mb-12"
 			>
 				<ArrowLeft size={16} class="group-hover:-translate-x-1 transition-transform" />
 				Inicio
@@ -61,18 +61,20 @@
 
 		<ScrollReveal>
 			<h1
-				class="font-bold uppercase tracking-[0.15em] leading-tight mb-12"
+				class="font-display italic font-light leading-tight mb-12"
 				style="font-size: clamp(1.8rem, 4vw, 3rem);"
 			>
 				Galería
 			</h1>
 		</ScrollReveal>
 
-		<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+		<div class="columns-2 md:columns-3 gap-3">
 			{#each allPhotos as photo, i}
-				<ScrollReveal delay={i * 50}>
-					<PhotoCard src={photo.src} alt={photo.alt} />
-				</ScrollReveal>
+				<div class="break-inside-avoid mb-3">
+					<ScrollReveal delay={i * 50}>
+						<PhotoCard src={photo.src} alt={photo.alt} square={false} />
+					</ScrollReveal>
+				</div>
 			{/each}
 		</div>
 	</div>

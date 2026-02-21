@@ -1,28 +1,38 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import { gsap } from '$lib/gsap';
 
-	let { children, delay = 0, class: className = '' }: { children: Snippet; delay?: number; class?: string } = $props();
-	let isVisible = $state(false);
+	let {
+		children,
+		delay = 0,
+		class: className = ''
+	}: { children: Snippet; delay?: number; class?: string } = $props();
 
-	function observe(node: HTMLDivElement) {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					isVisible = true;
-					observer.unobserve(node);
-				}
-			},
-			{ threshold: 0.1 }
-		);
-		observer.observe(node);
-		return { destroy: () => observer.disconnect() };
+	function reveal(node: HTMLElement) {
+		gsap.set(node, { autoAlpha: 0, y: 30 });
+
+		const tween = gsap.to(node, {
+			autoAlpha: 1,
+			y: 0,
+			duration: 0.8,
+			delay: delay / 1000,
+			ease: 'power3.out',
+			scrollTrigger: {
+				trigger: node,
+				start: 'top 90%',
+				once: true
+			}
+		});
+
+		return {
+			destroy() {
+				tween.scrollTrigger?.kill();
+				tween.kill();
+			}
+		};
 	}
 </script>
 
-<div
-	use:observe
-	class="transition-all duration-700 ease-out {className}"
-	style="transition-delay: {delay}ms; opacity: {isVisible ? 1 : 0}; transform: translateY({isVisible ? 0 : 30}px);"
->
+<div use:reveal class={className}>
 	{@render children()}
 </div>

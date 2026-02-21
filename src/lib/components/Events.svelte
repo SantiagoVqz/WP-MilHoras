@@ -7,10 +7,10 @@
 <section id="eventos" class="py-24 md:py-32">
 	<div class="mx-auto max-w-7xl px-6">
 		<ScrollReveal>
-			<p class="text-[0.65rem] uppercase tracking-[0.3em] text-brand-gray mb-12">Eventos</p>
+			<p class="text-sm tracking-widest text-warm-taupe mb-12">Eventos</p>
 		</ScrollReveal>
 
-		<div class="divide-y divide-white/10">
+		<div class="divide-y divide-warm-border">
 			{#each events as event, i}
 				<ScrollReveal delay={i * 100}>
 					<EventCard {event} />

@@ -8,12 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/cormorant':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource-variable/outfit':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@fontsource-variable/space-grotesk':
         specifier: ^5.2.10
         version: 5.2.10
       '@tailwindcss/vite':
         specifier: ^4.2.0
         version: 4.2.0(vite@7.3.1(jiti@2.6.1)(lightningcss@1.31.1))
+      gsap:
+        specifier: ^3.14.2
+        version: 3.14.2
       lucide-svelte:
         specifier: ^0.575.0
         version: 0.575.0(svelte@5.53.0)
@@ -212,6 +221,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/cormorant@5.2.8':
+    resolution: {integrity: sha512-fcBJbUH/ZGA3mhHo6fNnsG+1sfPHn0rAVNUI7MftF34XeevTjcKUw00qus+leFSaVuZc/x9ZaB7AAlDiQagBKQ==}
+
+  '@fontsource-variable/outfit@5.2.8':
+    resolution: {integrity: sha512-4oUDCZx/Tcz6HZP423w/niqEH31Gks5IsqHV2ZZz1qKHaVIZdj2f0/S1IK2n8jl6Xo0o3N+3RjNHlV9R73ozQA==}
 
   '@fontsource-variable/space-grotesk@5.2.10':
     resolution: {integrity: sha512-yJQO/o35/hAP3CFnpdFTwQku2yzJOae2HIpBmqkOVoxhhXJaQP3g+b6Jrz7u+eI7A5ZdCIf88uMWpBJdFiGr5w==}
@@ -720,6 +735,9 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
+  gsap@3.14.2:
+    resolution: {integrity: sha512-P8/mMxVLU7o4+55+1TCnQrPmgjPKnwkzkXOK1asnR9Jg2lna4tEY5qBJjMmAaOBDDZWtlRjBXjLa0w53G/uBLA==}
+
   imagetools-core@9.1.0:
     resolution: {integrity: sha512-xQjs+2vrxLnAjCq+omuNkd5UQTld9/bP8+YT0LyYTlKfuSQtgUBvqhUwGugzSAh6sCdN+LnROMuLswn5hZ9Fhg==}
     engines: {node: '>=20.0.0'}
@@ -1055,6 +1073,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.3':
     optional: true
+
+  '@fontsource-variable/cormorant@5.2.8': {}
+
+  '@fontsource-variable/outfit@5.2.8': {}
 
   '@fontsource-variable/space-grotesk@5.2.10': {}
 
@@ -1449,6 +1471,8 @@ snapshots:
     optional: true
 
   graceful-fs@4.2.11: {}
+
+  gsap@3.14.2: {}
 
   imagetools-core@9.1.0: {}
 

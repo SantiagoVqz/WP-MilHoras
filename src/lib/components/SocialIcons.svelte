@@ -9,7 +9,7 @@
 		href="https://www.instagram.com/milhorasmx"
 		target="_blank"
 		rel="noopener noreferrer"
-		class="text-brand-gray hover:text-white transition-colors"
+		class="text-warm-taupe hover:text-warm-amber transition-colors"
 		aria-label="Instagram"
 	>
 		<Instagram {size} />
@@ -18,7 +18,7 @@
 		href="https://soundcloud.com/milhorasmx"
 		target="_blank"
 		rel="noopener noreferrer"
-		class="text-brand-gray hover:text-white transition-colors"
+		class="text-warm-taupe hover:text-warm-amber transition-colors"
 		aria-label="SoundCloud"
 	>
 		<Music {size} />

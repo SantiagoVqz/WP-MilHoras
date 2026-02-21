@@ -1,12 +1,16 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/space-grotesk';
+@import '@fontsource-variable/cormorant';
+@import '@fontsource-variable/outfit';
 
 @theme {
-	--font-sans: 'Space Grotesk Variable', system-ui, sans-serif;
-	--color-brand-black: #0a0a0a;
-	--color-brand-dark: #111111;
-	--color-brand-gray: #888888;
-	--color-brand-light: #e5e5e5;
+	--font-sans: 'Outfit Variable', system-ui, sans-serif;
+	--font-display: 'Cormorant Variable', 'Georgia', serif;
+	--color-warm-black: #0c0a09;
+	--color-warm-dark: #1a1614;
+	--color-warm-amber: #c8a882;
+	--color-warm-taupe: #8a7968;
+	--color-warm-cream: #f5f0eb;
+	--color-warm-border: rgba(200, 168, 130, 0.15);
 }
 
 html {
@@ -15,12 +19,27 @@ html {
 
 body {
 	font-family: var(--font-sans);
-	background-color: var(--color-brand-black);
+	background-color: var(--color-warm-black);
 	color: white;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-* {
-	border-radius: 0 !important;
+.grain-overlay {
+	position: relative;
+}
+
+.grain-overlay::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+	background-repeat: repeat;
+	background-size: 256px 256px;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.gsap-hidden {
+	visibility: hidden;
 }
